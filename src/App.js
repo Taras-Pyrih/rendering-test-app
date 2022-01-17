@@ -1,58 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import { OrderedStringList } from "./OrderedStringList.js";
+import { UnorderedStringList } from "./UnorderedStringList.js";
 
-function App() {
-  function OrderedStringList(props) {
-    const strings = props.strings;
-    const stringList = strings.map((string, index) =>
-      <li key={index}>
-        {string}
-      </li>
-    );
-
-    if (stringList.length == 0) {
-      return (
-        <div>
-          Ви задали порожній масив!
-        </div>    
-      );
-    }
-    else {
-      return (
-        <ol>
-          {stringList}
-        </ol>
-      );
-    }
-  }
-
+export const App = () => {
   const stringArray = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
-
-  function UnorderedStringList(props) {
-    const items = props.items;
-    const stringList = items.map(item =>
-      <li key={item.id}>
-        {item.string}
-      </li>
-    );
-
-    if (stringList.length == 0) {
-      return (
-        <div>
-          Ви задали порожній масив!
-        </div>    
-      );
-    }
-    else {
-      return (
-        <ul>
-          {stringList}
-        </ul>
-      );
-    }
-  }
-
   const itemArray = [
     {id: 1, string: "один"},
     {id: 2, string: "два"},
@@ -64,7 +17,7 @@ function App() {
     {id: 8, string: "вісім"},
     {id: 9, string: "дев'ять"},
     {id: 10, string: "десять"}
-  ]
+  ];
 
   return (
     <div className="App">
@@ -74,5 +27,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
