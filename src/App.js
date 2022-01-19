@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { OrderedStringList } from "./OrderedStringList.js";
 import { UnorderedStringList } from "./UnorderedStringList.js";
 
 export const App = () => {
-  const stringArray = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
-  const itemArray = [
+  const [stringArray] = useState(["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]);
+  const [itemArray] = useState([
     {id: 1, string: "один"},
     {id: 2, string: "два"},
     {id: 3, string: "три"},
@@ -17,7 +16,7 @@ export const App = () => {
     {id: 8, string: "вісім"},
     {id: 9, string: "дев'ять"},
     {id: 10, string: "десять"}
-  ];
+  ]);
 
   return (
     <div className="App">
