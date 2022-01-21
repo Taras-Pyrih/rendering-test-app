@@ -1,28 +1,27 @@
 import './App.css';
 import React, { useState } from 'react';
-import { OrderedStringList } from "./OrderedStringList.js";
-import { UnorderedStringList } from "./UnorderedStringList.js";
+import { List } from './List.js';
 
 export const App = () => {
   const [stringArray] = useState(["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]);
-  const [itemArray] = useState([
-    {id: 1, string: "один"},
-    {id: 2, string: "два"},
-    {id: 3, string: "три"},
-    {id: 4, string: "чотири"},
-    {id: 5, string: "п'ять"},
-    {id: 6, string: "шість"},
-    {id: 7, string: "сім"},
-    {id: 8, string: "вісім"},
-    {id: 9, string: "дев'ять"},
-    {id: 10, string: "десять"}
+  const [objectArray] = useState([
+    {text: "один", id: 11},
+    {text: "два", id: 22},
+    {text: "три", id: 33},
+    {text: "чотири", id: 44},
+    {text: "п'ять", id: 55},
+    {text: "шість", id: 66},
+    {text: "сім", id: 77},
+    {text: "вісім", id: 88},
+    {text: "дев'ять", id: 99},
+    {text: "десять", id: 1010}
   ]);
 
   return (
-    <div className="App">
-      <OrderedStringList strings={stringArray}/>
+    <div className='App'>
+      <List data={stringArray} flag="strings"/>
       <hr/>
-      <UnorderedStringList items={itemArray}/>
+      <List data={objectArray} flag="objects"/>
     </div>
   );
 }

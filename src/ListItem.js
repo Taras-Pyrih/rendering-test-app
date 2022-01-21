@@ -1,3 +1,7 @@
 export const ListItem = (props) => {
-  return <li>{props.string}</li>
+  return (
+    props.id
+    ? <li>{props.value} (id = {props.id})</li>
+    : <li>{props.value}</li>
+  );
 }
